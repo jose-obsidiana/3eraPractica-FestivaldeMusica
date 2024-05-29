@@ -1,0 +1,49 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.video {
+    position: relative;
+    max-height: 70rem;
+    min-height: 50rem;
+    overflow: hidden;
+
+    .overlay  {
+        position: absolute;
+       // background: rgb(158,0,255);
+       // background: linear-gradient(270deg, rgba(158,0,255,0.21621148459383754) 0%, rgba(255,0,110,0.31425070028011204) 100%);
+       background: rgb(175,0,255);
+background: linear-gradient(108deg, rgba(175,0,255,0.333858543417367) 18%, rgba(20,0,253,0.4431022408963585) 100%);
+       height: 100%;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    video {
+        width: auto;
+        display: block;
+        @include m.desktop {    
+            width: 100%;
+        }
+    }
+}
+
+.contenido-video {
+    z-index: 10;  // es para cambiar la posición y que queden las letras adelante del video, y así se pueden seleccionar.
+    h2 {
+        color: v.$blanco;
+        font-size: 7rem;
+        margin: 0;
+
+    }
+    p {
+        color: v.$blanco;
+        background-color: v.$rosa;
+        display: inline-block;
+        padding: 1rem 2rem;
+        font-weight: 700;
+        font-size: 2.4rem;
+        margin: 0;
+    }
+}
